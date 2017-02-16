@@ -1,0 +1,7 @@
+.container
+  .row
+    #sidebar
+      ul
+        li=link_to 'Upload File', '#', data: {target: "#myModal", toggle: "modal"}
+
+      = render partial: 'shared/upload_file'    
