@@ -25,3 +25,7 @@ group :development do
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
