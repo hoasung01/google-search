@@ -1,0 +1,7 @@
+aside.sidebar-left
+  a.company-logo href="#" Nimbl
+  .sidebar-links
+    = link_to 'Upload File', '#', data: {target: "#myModal", toggle: "modal"}, class: 'link-blue'
+    = link_to 'Report', '#', class: 'link-red'
+    = link_to 'Query', '#', class: 'link-yellow'
+= render partial: 'shared/upload_file'      
