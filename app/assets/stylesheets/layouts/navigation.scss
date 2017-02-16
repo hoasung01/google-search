@@ -1,9 +1,15 @@
 .navbar-header {
   .navbar-brand {
     display: inline;
+    a {
+      color: white;
+    }
   }
   .user-info {
     display: inline;
     float: right;
+    a {
+      color: white;
+    }
   }
 }
