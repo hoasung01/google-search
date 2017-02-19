@@ -2,6 +2,7 @@ class UploadWorker
   include Sidekiq::Worker
 
   def perform(*args)
-    # Do something
+    log("perform start")
+    log("perform end")
   end
 end
