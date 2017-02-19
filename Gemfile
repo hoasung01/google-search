@@ -10,6 +10,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 # background job
 gem 'sidekiq'
+# parser xpath, css google page
+gem 'nokogiri'
+
 
 group :development, :test do
   gem 'byebug'
