@@ -16,7 +16,34 @@ class GgKeyword < ActiveRecord::Base
     end    
   end
 
-  def get_google_page_with_keyword(keyword)
-    page = Nokogiri::HTML(open(GOOGLE_SITE + "/search?#{keyword}"))
+  def process_data(data=[])
+    @keywords = GgKeyword.where(name: data)
+
+    @keywords.each do |keyword|
+      import_data(keyword)
+    end
+  end
+
+  private
+  def import_data(keyword)
+    page = Nokogiri::HTML(open(GOOGLE_SITE + "/search?q=#{keyword}"))
+
+    GgResultPage.create(
+      number_adword_top: page.css('#center_col').children[1].css('.ads-ad').count,
+      number_adword_bottom: page.css('#center_col #bottomads').css('.ads-ad').count,
+      adword_total: page.css('#center_col').children[1].css('.ads-ad').count + page.css('#center_col #bottomads').css('.ads-ad').count,
+      green_url_adword_top: page.css('#center_col').children[1].css('.ads-ad cite'),
+      green_url_adword_bottom: page.css('#center_col #bottomads').css('.ads-ad cite'),
+      number_non_adword: page.css('#ires').count,
+      url_non_adword: page.css('#ires cite'),
+      total_links: page.css('#ires cite').count + page.css('#center_col').children[1].css('.ads-ad').count + page.css('#center_col #bottomads').css('.ads-ad').count,
+      total_search: page.css('#resultStats').text.split(' ')[1].split(',').join,
+      html_code: page.display,
+      gg_keyword_id:
+    )
+  end
+
+  def max_pages
+    1
   end
 end
