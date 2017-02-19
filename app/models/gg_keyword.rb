@@ -42,8 +42,4 @@ class GgKeyword < ActiveRecord::Base
       gg_keyword_id: keyword.id,
     )
   end
-
-  def max_pages
-    1
-  end
 end
