@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
+# background job
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug'
@@ -26,6 +28,7 @@ group :development do
   gem 'rails_layout'
 end
 
+# fix tether issue
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
