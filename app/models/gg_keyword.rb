@@ -26,9 +26,9 @@ class GgKeyword < ActiveRecord::Base
 
   private
   def import_data(keyword)
-    page = Nokogiri::HTML(open(GOOGLE_SITE + "/search?q=#{keyword}"))
+    page = Nokogiri::HTML(open(GOOGLE_SITE + "/search?q=#{keyword.name}"))
 
-    GgResultPage.find_or_create_by(
+    GgResultPage.create!(
       number_adword_top: page.css('#center_col').children[1].css('.ads-ad').count,
       number_adword_bottom: page.css('#center_col #bottomads').css('.ads-ad').count,
       adword_total: page.css('#center_col').children[1].css('.ads-ad').count + page.css('#center_col #bottomads').css('.ads-ad').count,
@@ -39,7 +39,7 @@ class GgKeyword < ActiveRecord::Base
       total_links: page.css('#ires cite').count + page.css('#center_col').children[1].css('.ads-ad').count + page.css('#center_col #bottomads').css('.ads-ad').count,
       total_search: page.css('#resultStats').text.split(' ')[1].split(',').join,
       html_code: page.to_s,
-      gg_keyword_id: ' ',
+      gg_keyword_id: keyword.id,
     )
   end
 
