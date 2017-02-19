@@ -12,8 +12,8 @@ gem 'devise'
 gem 'sidekiq'
 # parser xpath, css google page
 gem 'nokogiri'
-
-
+# fix ssl verify certified
+gem 'certified', '~> 1.0'
 group :development, :test do
   gem 'byebug'
 end
