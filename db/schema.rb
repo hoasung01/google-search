@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216174247) do
+ActiveRecord::Schema.define(version: 20170219150339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170216174247) do
     t.string   "url_non_adword"
     t.integer  "total_links"
     t.integer  "total_search"
-    t.string   "html_code"
+    t.text     "html_code"
     t.integer  "gg_keyword_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
