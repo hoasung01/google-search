@@ -16,6 +16,8 @@ gem 'nokogiri'
 gem 'certified', '~> 1.0'
 # store attached file
 gem 'paperclip'
+# state machine
+gem 'aasm', '~> 4.11'
 group :development, :test do
   gem 'byebug'
 end
