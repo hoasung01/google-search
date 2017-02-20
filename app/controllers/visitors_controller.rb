@@ -1,6 +1,6 @@
 class VisitorsController < ApplicationController  
   def report
-    @results = GgResultPage.page params[:page]
+    @results = GgResultPage.joins(:gg_keyword).order("gg_keywords.name DESC").page params[:page]
   end
 
   def upload_csv
