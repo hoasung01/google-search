@@ -4,7 +4,4 @@ class GgSearchController < ApplicationController
     else
     end
   end
-
-  def report
-  end
 end

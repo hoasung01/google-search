@@ -1,0 +1,36 @@
+.row
+  .col-md-12.col-xs-12
+    .panel.panel-default
+      .panel-heading
+        | Report
+      br/
+      .panel-body
+        .dataTable_wrapper.table-responsive
+          table.table
+            thead
+              tr
+                th number_adword_top
+                th number_adword_bottom
+                th adword_total
+                th green_url_adword_top
+                th green_url_adword_bottom
+                th number_non_adword
+                th url_non_adword
+                th total_links
+                th total_search
+                th html_code
+                th gg_keyword_id
+            tbody
+              - @results.each do |result|
+                tr
+                  td=result.number_adword_top
+                  td=result.number_adword_bottom
+                  td=result.adword_total
+                  td=result.green_url_adword_top
+                  td=result.green_url_adword_bottom
+                  td=result.number_non_adword
+                  td=result.url_non_adword
+                  td=result.total_links
+                  td=result.total_search
+                  td=result.html_code
+                  td=result.gg_keyword_id
