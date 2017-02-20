@@ -7,11 +7,7 @@ class VisitorsController < ApplicationController
     @data_set = DataSet.create(data_set_params)
     respond_to do |format|
       if @data_set.valid?
-        begin
-          GgKeyword.create_keyword(@data_set.csv_file.path)
-          GgKeyword.new().process_data
-        rescue
-        end
+        UploadWorker.perform(@data_set.csv_file.path)
         format.html {redirect_to '/'}
       else
         format.js {render json: @data_set.errors, status: false}
