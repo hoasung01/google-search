@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'visitors#index'
   resources :visitors, only: [] do
-    get 'report', on: :collection
+    collection do
+      get :report
+      post :upload_csv
+    end
   end
   resources :gg_search, only: [] do
     post 'upload_csv', on: :collection
