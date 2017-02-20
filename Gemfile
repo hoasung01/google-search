@@ -14,6 +14,8 @@ gem 'sidekiq'
 gem 'nokogiri'
 # fix ssl verify certified
 gem 'certified', '~> 1.0'
+# store attached file
+gem 'paperclip'
 group :development, :test do
   gem 'byebug'
 end
