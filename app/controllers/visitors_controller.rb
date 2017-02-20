@@ -5,6 +5,13 @@ class VisitorsController < ApplicationController
 
   def upload_csv
     @data_set = DataSet.create(data_set_params)
+    respond_to do |format|
+      if @data_set.valid?
+        format.html {redirect_to '/'}
+      else
+        format.js {render json: @data_set.errors, status: false}
+      end
+    end
   end
 
   private
