@@ -1,6 +1,6 @@
 class VisitorsController < ApplicationController  
   def report
-    @results = GgResultPage.all
+    @results = GgResultPage.page params[:page]
   end
 
   def upload_csv

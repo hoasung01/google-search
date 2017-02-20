@@ -18,6 +18,8 @@ gem 'certified', '~> 1.0'
 gem 'paperclip'
 # state machine
 gem 'aasm', '~> 4.11'
+# paging
+gem 'kaminari'
 group :development, :test do
   gem 'byebug'
 end
