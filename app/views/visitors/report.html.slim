@@ -9,17 +9,17 @@
           table.table
             thead
               tr
-                th number_adword_top
-                th number_adword_bottom
-                th adword_total
-                th green_url_adword_top
-                th green_url_adword_bottom
-                th number_non_adword
-                th url_non_adword
-                th total_links
-                th total_search
-                th html_code
-                th gg_keyword_id
+                th Number Adword Top
+                th Number Adword Bottom
+                th Adword Total
+                th Green Url Adword Top
+                th Green Url Adword Bottom
+                th Number Non Adword
+                th Url Non Adword
+                th Total Links
+                th Total Search
+                th Html Code
+                th Gg Keyword Name
             tbody
               - @results.each do |result|
                 tr
@@ -33,6 +33,6 @@
                   td=result.total_links
                   td=result.total_search
                   td=result.html_code
-                  td=result.gg_keyword_id
+                  td=result.gg_keyword_name
           .row
             =paginate @results   
