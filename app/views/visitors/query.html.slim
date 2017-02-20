@@ -1,0 +1,43 @@
+.row
+  .col-md-12.col-xs-12
+    .panel.panel-default
+      .panel-heading
+        | Query
+      br/
+      .panel-body
+        .dataTable_wrapper.table-responsive
+          table.table
+            thead
+              tr
+                th Query Statement
+                th Run
+                th Result
+            tbody
+              tr
+                td
+                  p 
+                    | How many URLs contain the word
+                    = text_field_tag :query_contain_word
+                    | in AdWords
+                td
+                  = link_to "RUN", "/", id: "run_query_contain_word", class: "btn btn-primary"
+                td
+                  p#result-query-contain-word
+              tr
+                td
+                  p
+                   |How many times a specific URL shows up in SEO
+                td
+                  = link_to "RUN", "/", id: "run_query_time_show_up_seo", class: "btn btn-danger"
+                td
+                  p#result-time-show-up-seo
+              tr
+                td    
+                  p
+                    |How many keywords have URLs in SEO with 2+ /’s or 1+ >
+                td
+                  = link_to "RUN", "/", id: "run_query_keyword_have_seo", class: "btn btn-warning"
+                td
+                  p#result-keyword-have-seo   
+
+         

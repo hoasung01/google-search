@@ -3,5 +3,5 @@ aside.sidebar-left
   .sidebar-links
     = link_to 'Upload File', '#', data: {target: "#myModal", toggle: "modal"}, class: 'link-blue'
     = link_to 'Report', report_visitors_url, class: 'link-red'
-    = link_to 'Query', '#', class: 'link-yellow'
+    = link_to 'Query', query_visitors_url, class: 'link-yellow'
 = render partial: 'shared/upload_file'      

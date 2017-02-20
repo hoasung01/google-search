@@ -15,6 +15,10 @@ class VisitorsController < ApplicationController
     end
   end
 
+  def query
+    
+  end
+
   private
     def data_set_params
       params.fetch(:data_set, {}).permit(:csv_file)

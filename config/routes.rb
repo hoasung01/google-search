@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     collection do
       get :report
       post :upload_csv
+      get :query
     end
   end
   resources :gg_search, only: [] do
-    post 'upload_csv', on: :collection
   end
   namespace :api do
     namespace :v1 do
