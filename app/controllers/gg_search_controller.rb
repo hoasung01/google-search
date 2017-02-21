@@ -1,2 +1,0 @@
-class GgSearchController < ApplicationController
-end
