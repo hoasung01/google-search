@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  api:
+    v1:
+      google_search:
+        error:
+          wrong_format: "not support %{request_format}"

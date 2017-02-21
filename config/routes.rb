@@ -8,10 +8,13 @@ Rails.application.routes.draw do
       get :query
     end
   end
-  resources :gg_search, only: [] do
-  end
   namespace :api do
     namespace :v1 do
+      resources :google_search do
+        collection do
+          get :report
+        end
+      end
     end
   end
 end
